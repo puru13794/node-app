@@ -1,13 +1,18 @@
-const path = require("path");
-const express = require("express");
+const path = require('path');
+
+const express = require('express');
+
+const adminController = require('../controllers/admin');
 
 const router = express.Router();
 
-const prodcutsconstroller = require("../controllers/products");
+// /admin/add-product => GET
+router.get('/add-product', adminController.getAddProduct);
 
-router.get("/add-product", prodcutsconstroller.getaddProducts);
+// /admin/products => GET
+router.get('/products', adminController.getProducts);
 
-router.post("/add-product", prodcutsconstroller.postaddProducts);
+// /admin/add-product => POST
+router.post('/add-product', adminController.postAddProduct);
 
-// module.exports = router;
 module.exports = router;
