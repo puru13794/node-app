@@ -19,7 +19,7 @@ app.use(express.static(path.join(__dirname, "public")));
 //   console.log("in the middleware");
 //   res.send("khjfehkjh");
 // });
-app.use("/admin", adminroutes.routes);
+app.use("/admin", adminroutes);
 app.use(shoproutes);
 app.use((req, res, next) => {
   res
